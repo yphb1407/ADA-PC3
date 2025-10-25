@@ -1,0 +1,49 @@
+se destaca el uso de un elemento llamado pivote, que sirve para dividir
+el arreglo en partes: los elementos menores que el pivote se ubican a 
+su izquierda y los mayores a su derecha. En otras palabras, todo Quicksort
+utiliza un pivote, pero cuando se menciona “Quicksort con pivote” se hace
+referencia a la forma explícita en la que se elige y aplica dicho elemento
+para realizar la partición del conjunto de datos.
+
+
+public class QuickSortInPV {
+
+    public static void quickSort(int[] arr, int start, int end) {
+        if (start < end) {
+            int indexPivote = partition(arr, start, end);
+            quickSort(arr, start, indexPivote - 1);
+            quickSort(arr, indexPivote + 1, end);
+        }
+    }
+
+    private static int partition(int[] arr, int start, int end) {
+        int pivote = arr[start]; // Usamos el primer elemento
+        int i = start + 1;
+        int j = end;
+
+        while (i <= j) {
+            while (i <= j && arr[i] <= pivote) i++;
+            while (i <= j && arr[j] > pivote) j--;
+
+            if (i < j) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // Intercambiar el pivote con arr[j]
+        arr[start] = arr[j];
+        arr[j] = pivote;
+
+        return j;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {9, 4, 7, 2, 6, 3, 8};
+        quickSort(arr, 0, arr.length - 1);
+
+        System.out.println("Ordenado:");
+        for (int n : arr) System.out.print(n + " ");
+    }
+}
