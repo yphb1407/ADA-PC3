@@ -1,0 +1,12 @@
+Tecnica divide y venceras: descompone  un problema en subproblemas para poder resolverlo más fácil y al final combinar todo
+
+Shell sort: permite intercambiar elementos que estan lejos uno del otro. La idea es que la lista se ordene por subelementos los cuales se ordenan por método de inserción directa 
+Peor caso O(n²)
+Secuencia de knuth O(n^3/2)
+Complejidad espacial O(1)
+
+QuickSort: aplicando el concepto de divide y venceras se elije un elemento de la lista como pivote de tal manera que los elementos menores queden a la izquierda y los mayores a la derecha. Luego se aplica el concepto a la sublistas quedando todo ordenado 
+Mejor caso O(nlogn) 
+Peor caso O(n²) 
+Caso promedio O(nlogn) 
+Complejidad espacial O(nlogn)
