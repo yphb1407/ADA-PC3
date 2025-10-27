@@ -4,7 +4,7 @@ su izquierda y los mayores a su derecha. En otras palabras, todo Quicksort
 utiliza un pivote, pero cuando se menciona “Quicksort con pivote” se hace
 referencia a la forma explícita en la que se elige y aplica dicho elemento
 para realizar la partición del conjunto de datos.
-
+----------------------------------------------------------------------------------
 
 public class QuickSortInPV {
 
@@ -47,3 +47,4 @@ public class QuickSortInPV {
         for (int n : arr) System.out.print(n + " ");
     }
 }
+
