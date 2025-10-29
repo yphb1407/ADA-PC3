@@ -1,0 +1,13 @@
+La diferencia entre Shellsort y Shellsort con incremento 
+(o con una secuencia de incrementos) radica en que el primero
+ describe el algoritmo general de ordenamiento propuesto por
+ Donald Shell, que mejora el método de inserción directa
+ dividiendo el arreglo en subgrupos más pequeños para ordenar
+los parcialmente, mientras que el segundo especifica la forma
+ particular en que se eligen los incrementos o saltos entre los
+ elementos comparados. En otras palabras, Shellsort con incrementos
+ detalla el criterio usado para definir las distancias entre elementos
+ (como la secuencia de Shell, Hibbard o Knuth), lo que influye directamente
+ en la eficiencia del algoritmo, mientras que Shellsort a secas se 
+refiere al procedimiento general sin precisar cómo se determina
+dicha secuencia.
