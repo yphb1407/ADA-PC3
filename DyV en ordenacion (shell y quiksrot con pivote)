@@ -5,8 +5,60 @@ Peor caso O(n²)
 Secuencia de knuth O(n^3/2)
 Complejidad espacial O(1)
 
+
+import java.util.Arrays;
+
+public class ShellSortExample {
+
+    public static void shellSort(int[] arr) {
+        int n = arr.length;
+
+        // Start with a large gap, then reduce the gap
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            // Perform a "gapped" insertion sort for this gap size
+            // The first gap elements arr[0..gap-1] are already in gapped order
+            // keep adding one more element until the entire array is gap sorted
+            for (int i = gap; i < n; i++) {
+                // add arr[i] to the elements that have been gap sorted
+                // save arr[i] in temp and make a hole at position i
+                int temp = arr[i];
+
+                // shift earlier gap-sorted elements up until
+                // the correct location for arr[i] is found
+                int j;
+                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                    arr[j] = arr[j - gap];
+                }
+
+                // put temp (the original arr[i]) in its correct location
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Utility function to print the array
+    public static void printArray(int[] arr) {
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String args[]) {
+        int[] arr = {12, 34, 54, 2, 3, 77, 17, 93, 26, 55, 20, 44, 31};
+        System.out.println("Array before sorting:");
+        printArray(arr);
+
+        shellSort(arr);
+
+        System.out.println("Array after sorting:");
+        printArray(arr);
+    }
+}
+
 QuickSort: aplicando el concepto de divide y venceras se elije un elemento de la lista como pivote de tal manera que los elementos menores queden a la izquierda y los mayores a la derecha. Luego se aplica el concepto a la sublistas quedando todo ordenado 
 Mejor caso O(nlogn) 
 Peor caso O(n²) 
 Caso promedio O(nlogn) 
 Complejidad espacial O(nlogn)
+
+
+
+
