@@ -10,5 +10,5 @@ los parcialmente, mientras que el segundo especifica la forma
  (como la secuencia de Shell, Hibbard o Knuth), lo que influye directamente
  en la eficiencia del algoritmo, mientras que Shellsort a secas se 
 refiere al procedimiento general sin precisar cómo se determina
-
 dicha secuencia.
+
